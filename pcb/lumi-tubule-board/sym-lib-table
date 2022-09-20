@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name Adafruit_ESP32-S3_8MB_No_PSRAM-eagle-import)(type Legacy)(uri D:/code/lumi-tubule/pcb/lib/Adafruit_ESP32-S3_8MB_No_PSRAM-eagle-import.lib)(options "")(descr ""))
+  (lib (name other-parts)(type Legacy)(uri D:/code/lumi-tubule/pcb/lib/other-parts.lib)(options "")(descr ""))
+)

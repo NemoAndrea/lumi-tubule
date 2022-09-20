@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name lumi-tubule-board)(type KiCad)(uri D:/code/lumi-tubule/pcb/lib/lumi-tubule-board.pretty)(options "")(descr ""))
+)

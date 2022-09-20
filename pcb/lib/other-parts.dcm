@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP DMN1045UFR4
+D 3.2A Id, 12V Vds, N-Channel MOSFET, X2-DFN1010-3
+K N-Channel MOSFET
+F https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-DMN1045UFR4-7_C460988.pdf
+$ENDCMP
+#
+$CMP MF-NSMF200-2
+D Resettable fuse, polymeric positive temperature coefficient, small symbol
+K resettable fuse PTC PPTC polyfuse polyswitch
+F ~
+$ENDCMP
+#
+#End Doc Library
