@@ -16,5 +16,7 @@ There are 4 key components that make up the LumiTubule
 
 1. The custom PCB with ESP32 microcontroller and onboard sensors
 2. A [15W USB-C power supply](https://www.raspberrypi.com/products/type-c-power-supply/)
-3. The 3D printed microtubule sculpture 
+3. The 3D printed microtubule sculpture (translucent)
 4. The 13 flexible LED filaments that sit inside the sculpture
+
+![led filaments in action](media/led_filament_in_print.webp)
