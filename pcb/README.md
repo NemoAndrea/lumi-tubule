@@ -19,6 +19,13 @@ Some weird quirks during drawing process
 
 > **Note** The points below provide some insight into why certain parts were selected. If you spot any errors in the calculations or reasoning, feel free to let me know!
 
-**LED filament current limiting resistor value**
+**LED filament current setting resistor value `R_ext`**
 
-The LED filaments can handle about 100mA current (more in practice seems fine), so let's aim for that value.
+The LED filaments can handle about 100mA current (more in practice seems fine), so let's aim for that value. We need to chose `R_ext` for the `TLC59108` and find an internal configuration to match. 
+
+We look [in the datasheet](https://www.ti.com/lit/ds/symlink/tlc59108.pdf) and glance at section `10.1.1.2` ('adjusting the output current') . We see that the output current will depend on `R_ext`, `VG`, and `CM`. The latter two are configurable via internal register `IREF`. The default value of `CM` is 1, which sets `I_out/I_ref` = 15, and is listed as suitable for the 10mA-120mA regime; so we do not need to adjust this.   
+
+`VG` is a more complicated value, being composed of the internal register value `HC` and `CC[5:0]`. Its default value is ~1 (0.992), which means that `V_ext` =1.25V (which has the following dependence: `V_ext = 1.26 * VG`).
+
+Now we can put it together. We want `I_out`=100mA, so we need `I_ext` to be 100/15= 6.67mA. `I_ext` is simply set by `V_ext/R_ext`. So we need `R_ext` = 1.25/( 6.67 E-3) = **187.4 Ohm**. Dissipation in this resistor will only be (6.67mA)^2 * 187 = 10mW, so we can pretty much pick any package size.
+
