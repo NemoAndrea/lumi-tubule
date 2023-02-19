@@ -29,3 +29,15 @@ We look [in the datasheet](https://www.ti.com/lit/ds/symlink/tlc59108.pdf) and g
 
 Now we can put it together. We want `I_out`=100mA, so we need `I_ext` to be 100/15= 6.67mA. `I_ext` is simply set by `V_ext/R_ext`. So we need `R_ext` = 1.25/( 6.67 E-3) = **187.4 Ohm**. Dissipation in this resistor will only be (6.67mA)^2 * 187 = 10mW, so we can pretty much pick any package size.
 
+### Generating fabrication outputs
+
+We can generate a BOM from the schematic editor. We use a slightly modified version of [this custom script](https://gist.githubusercontent.com/arturo182/a8c4a4b96907cfccf616a1edb59d0389/raw/2c9191c0f1fe5471db3362ccf29f71d3235af4d4/bom2grouped_csv_jlcpcb.xsl) where we fetch part numbers from the custom field name 'JLCPCB ref' instead. You can see the value of this field in the schematic editor for each component. This is based on advice [from JLCPCB](https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad).
+
+We then turn to the PCB editor. We first need to run the [Rounded tracks plugin](https://github.com/mitxela/kicad-round-tracks). Run it with default parameters, and make sure you generate a new file. 
+
+Next up, run the [Teardrops plugin](https://github.com/NilujePerchut/kicad_scripts/tree/master/teardrops). Use the following settings.
+
+![](../media/pcb-meta/teardrop-settings.JPG)
+
+Now we can generate the `.gbr` files. We do this following [the suggestions by JLCPCB](https://support.jlcpcb.com/article/194-how-to-generate-gerber-and-drill-files-in-kicad-6).
+

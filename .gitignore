@@ -27,8 +27,7 @@ fp-info-cache
 *.dsn
 *.ses
 
-# Exported BOM files
-*.xml
-*.csv
+
 *auto_saved_files*
 pcb/lumi-tubule-board/legacy_files/*
+fabrication_outputs.zip
