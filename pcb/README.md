@@ -39,5 +39,18 @@ Next up, run the [Teardrops plugin](https://github.com/NilujePerchut/kicad_scrip
 
 ![](../media/pcb-meta/teardrop-settings.JPG)
 
-Now we can generate the `.gbr` files. We do this following [the suggestions by JLCPCB](https://support.jlcpcb.com/article/194-how-to-generate-gerber-and-drill-files-in-kicad-6).
+Now we can generate the `.gbr` files. We do this following [the suggestions by JLCPCB](https://support.jlcpcb.com/article/194-how-to-generate-gerber-and-drill-files-in-kicad-6). **In addition, we need to tick the place file origin option, as the PCB uses a virtual origin.** In short:
 
+![](../media/pcb-meta/gerber-settings.jpg)
+
+And for the drill file (we want to again pick the `drill/place file` origin:
+
+![](../media/pcb-meta/drill-settings.jpg)
+
+Finally we need to generate the placement file. This is done from the PCB editor under `fabrication outputs`. We generate a `.pos` file. Per [instructions from JLCPCB](https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad) we start with these settings in `KiCad`:
+
+![](../media/pcb-meta/centroid_settigns.JPG)
+
+And then in the resulting `.csv` we change the following bits:
+
+![centroid changes](../media/pcb-meta/centroid_changes.jpg)
